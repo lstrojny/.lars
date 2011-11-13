@@ -1,0 +1,35 @@
+#!/bin/sh
+
+function install_vimext() {
+    for dir in $1/*; do
+        if [ -d $dir ]; then
+            mkdir -p ~/.vim/`basename $dir`
+            rsync -r --exclude="*/.git/*" --exclude="*/.svn/*" $dir/* ~/.vim/`basename $dir`
+        fi
+    done
+}
+
+echo "Installing .bashrc"
+ln -sf $PWD/dot-bashrc ~/.bashrc
+
+echo "Installing .bash_profile"
+ln -sf $PWD/dot-bashrc ~/.bash_profile
+
+echo "Installing .caprc"
+ln -sf $PWD/dot-caprc ~/.caprc
+
+echo "Installing .gitconfig"
+ln -sf $PWD/dot-gitconfig ~/.gitconfig
+
+echo "Installing .vimrc"
+ln -sf $PWD/dot-vimrc ~/.vimrc
+
+rm -rf temp
+mkdir temp
+echo "Installing Erlang support for VIM"
+git clone -q https://github.com/oscarh/vimerl.git temp/vimerl
+install_vimext temp/vimerl
+
+echo "Installing Scala support for VIM"
+svn -q checkout http://lampsvn.epfl.ch/svn-repos/scala/scala-tool-support/trunk/src/vim/ temp/scala
+install_vimext temp/scala

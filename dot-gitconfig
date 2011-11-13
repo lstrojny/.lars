@@ -1,0 +1,13 @@
+[user]
+	name = Lars Strojny
+	email = lars@strojny.net
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto

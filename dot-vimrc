@@ -1,0 +1,82 @@
+" Enable syntax highlighting
+syntax on
+
+" Enable filetype plugin
+filetype plugin on
+
+" Search should highlight
+set hlsearch
+
+" Execute modelines
+set modeline
+
+" Use spaces
+set ts=4
+set sw=4
+set expandtab
+
+" Display row numbers
+set nu!
+
+" Dark background
+set background=dark
+
+" A lot of different extensions are actually Zip files
+au BufReadCmd *.zargo,*.jar,*.xpi call zip#Browse(expand("<amatch>"))
+
+" Mark line length violation
+set textwidth=120
+
+" Highlight trailing spaces
+hi link localWhitespaceError Error
+au Syntax * syn match localWhitespaceError /\(\zs\%#\|\s\)\+$/ display
+au Syntax * syn match localWhitespaceError / \+\ze\t/ display
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+
+" Folding
+set foldmethod=syntax
+set nofoldenable
+let php_folding=2
+map f <Esc>:EnablePHPFolds<Cr>
+map l <Esc>:DisablePHPFolds<Cr>
+
+" Large history
+set history=10000
+
+" VIM defaults
+set nocompatible
+
+"Auto indenting
+set autoindent
+
+"Let us use the mouse
+" Disabled, it was too anoying
+" set mouse=vn
+
+" Filetype specific issues
+" Drupal modules
+autocmd BufRead,BufNewFile *.module setfiletype php|set syntax=php
+
+autocmd BufRead,BufNewFile Capfile setfiletype rb|set syntax=ruby
+
+" My procmail configuration
+autocmd BufRead,BufNewFile .procmailrc* set syntax=procmail
+
+" Use tabs for .c, .h, .phpt, .y-files (PHP coding standard, Liferea)
+autocmd BufRead,BufNewFile *.c,*.cc,*.h,*.y,*.phpt set noexpandtab
+
+" No width limit for .phtml and .json files
+autocmd BufRead,BufNewFile *.phtml,*.json set textwidth=0
+
+" Two spaces for .html, .haml, .rb, .js and .css
+autocmd BufRead,BufNewFile *.html,*.haml,*.rb,*.js,*.css set ts=2 sw=2 sts=2 et
+
+" Scala
+au BufRead,BufNewFile *.scala set filetype=scala
+
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "normal g'\"" |
+\ endif
