@@ -33,3 +33,11 @@ install_vimext temp/vimerl
 echo "Installing Scala support for VIM"
 svn -q checkout http://lampsvn.epfl.ch/svn-repos/scala/scala-tool-support/trunk/src/vim/ temp/scala
 install_vimext temp/scala
+
+echo "Installing Textile support for VIM"
+wget -q "http://www.vim.org/scripts/download_script.php?src_id=9427" -O temp/textile.zip
+unzip -q temp/textile.zip -d temp
+install_vimext temp/textile
+
+echo "Installing PHP folding support for VIM"
+wget -q "http://www.vim.org/scripts/download_script.php?src_id=12114" -O ~/.vim/plugin/phpfolding.vim
