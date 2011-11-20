@@ -27,7 +27,7 @@ ln -sf $PWD/dot-vimrc ~/.vimrc
 rm -rf temp
 mkdir temp
 echo "Installing Erlang support for VIM"
-git clone -q https://github.com/oscarh/vimerl.git temp/vimerl
+git clone -q git://github.com/oscarh/vimerl.git temp/vimerl
 install_vimext temp/vimerl
 
 echo "Installing Scala support for VIM"
@@ -43,5 +43,9 @@ echo "Installing PHP folding support for VIM"
 wget -q "http://www.vim.org/scripts/download_script.php?src_id=12114" -O ~/.vim/plugin/phpfolding.vim
 
 echo "Installing Twig support for VIM"
-git clone -q https://github.com/beyondwords/vim-twig.git temp/vim-twig
+git clone -q git://github.com/beyondwords/vim-twig.git temp/vim-twig
 install_vimext temp/vim-twig
+
+echo "Installing coffee-script support for VIM"
+git clone -q git://github.com/kchmck/vim-coffee-script.git temp/vim-coffee-script
+install_vimext temp/vim-coffee-script
