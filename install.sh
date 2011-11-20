@@ -41,3 +41,7 @@ install_vimext temp/textile
 
 echo "Installing PHP folding support for VIM"
 wget -q "http://www.vim.org/scripts/download_script.php?src_id=12114" -O ~/.vim/plugin/phpfolding.vim
+
+echo "Installing Twig support for VIM"
+git clone -q https://github.com/beyondwords/vim-twig.git temp/vim-twig
+install_vimext temp/vim-twig
