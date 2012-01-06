@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function install_vimext() {
+install_vimext() {
     for dir in $1/*; do
         if [ -d $dir ]; then
             mkdir -p ~/.vim/`basename $dir`
