@@ -7,8 +7,18 @@
     ci = commit
     pick = cherry-pick
     graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+	amend = commit
+	unpushed = log origin/master..HEAD
+	unp = log origin/master..HEAD
+	d = difftool
 [color]
     branch = auto
     diff = auto
     interactive = auto
     status = auto
+[core]
+	pager = less -r
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
