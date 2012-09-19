@@ -1,6 +1,6 @@
 export EDITOR=/usr/bin/vim
 
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 
 if which brew > /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
@@ -13,8 +13,8 @@ export LSCOLORS=exfxdxhxcxegedabagacad
 
 #GIT_PS1_SHOWSTASHSTATE=1
 #GIT_PS1_SHOWDIRTYSTATE=1
-#GIT_PS1_SHOWUNTRACKEDFILES=1
-#GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM=1
 #GIT_PS1_DESCRIBE_STYLE=describe
 #GIT_PS1_DESCRIBE_STYLE=branch
 #GIT_PS1_DESCRIBE_STYLE=contains
@@ -22,3 +22,5 @@ export LSCOLORS=exfxdxhxcxegedabagacad
 alias ll="ls -l"
 
 export PS1='\[\e[36;1m\]\u\[\e[37;1m\]@\[\e[32;1m\]\h\[\e[37;1m\] \[\e[0m\]\w\[\e[35;1m\]$(__git_ps1 " (%s)")\[\e[0m\] $ '
+
+GIT_MERGE_AUTOEDIT=no
