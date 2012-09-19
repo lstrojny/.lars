@@ -1,6 +1,6 @@
 [user]
-    name = Lars Strojny
-    email = lars@strojny.net
+	name = Lars Strojny
+	email = lars@strojny.net
 [alias]
     st = status
     co = checkout
@@ -11,6 +11,7 @@
 	unpushed = log origin/master..HEAD
 	unp = log origin/master..HEAD
 	d = difftool
+	fuddle = !bash -c \"git stash && git pull && git push origin master && git stash pop\"
 [color]
     branch = auto
     diff = auto
@@ -18,7 +19,4 @@
     status = auto
 [core]
 	pager = less -r
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
+	excludesfile = /Users/lstrojny/.gitignore_global
