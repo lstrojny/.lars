@@ -7,7 +7,7 @@ export PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
 
-if which brew > /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then
+if which brew &> /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
@@ -16,19 +16,21 @@ shopt -s histappend nocaseglob nocasematch cdspell
 export CLICOLOR=1
 export LSCOLORS=exfxdxhxcxegedabagacad
 
-#GIT_PS1_SHOWSTASHSTATE=1
-#GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM=1
-#GIT_PS1_DESCRIBE_STYLE=describe
-#GIT_PS1_DESCRIBE_STYLE=branch
-#GIT_PS1_DESCRIBE_STYLE=contains
-
 alias ll="ls -l"
+alias psed="perl -p -e"
 
-export PS1='$s \[\e[36;1m\]\u\[\e[37;1m\]@\[\e[32;1m\]\h\[\e[37;1m\] \[\e[0m\]\w\[\e[35;1m\]$(__git_ps1 " (%s)")\[\e[0m\] $ '
+if `type __git_ps1 &>/dev/null`; then
+    #GIT_PS1_SHOWSTASHSTATE=1
+    #GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUPSTREAM=1
+    #GIT_PS1_DESCRIBE_STYLE=describe
+    GIT_PS1_DESCRIBE_STYLE=branch
+    #GIT_PS1_DESCRIBE_STYLE=contains
+    export PS1='$s \[\e[36;1m\]\u\[\e[37;1m\]@\[\e[32;1m\]\h\[\e[37;1m\] \[\e[0m\]\w\[\e[35;1m\]$(__git_ps1 " (%s)")\[\e[0m\] $ '
+else
+    export PS1='$s \[\e[36;1m\]\u\[\e[37;1m\]@\[\e[32;1m\]\h\[\e[37;1m\] \[\e[0m\]\w\[\e[0m\] $ '
+fi
 export PROMPT_COMMAND="[ \$? -gt 0 ] && s=☁  || s=☀ "
 
 GIT_MERGE_AUTOEDIT=no
-
-alias psed="perl -p -e"
