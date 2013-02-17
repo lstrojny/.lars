@@ -1,7 +1,11 @@
 #!/bin/sh
-base=`dirname $0`
+cd `dirname $0`
+base=`pwd -P`
 
-(cd $base && git pull; cd -)
+echo "Updating dot files"
+git pull
+
+cd $OLDPWD
 
 echo "Installing .bashrc"
 ln -sf $base/dot-bashrc ~/.bashrc
