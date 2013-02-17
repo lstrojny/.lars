@@ -12,6 +12,9 @@
 	unp = log origin/master..HEAD
 	d = difftool
 	fuddle = !bash -c \"git stash && git pull && git push origin master && git stash pop\"
+	news = log -p HEAD@{1}..HEAD@{0}
+	gii = commit --interactive
+	p = push
 [color]
     branch = auto
     diff = auto
@@ -20,3 +23,5 @@
 [core]
 	pager = less -r
 	excludesfile = /Users/lstrojny/.gitignore_global
+[push]
+	default = matching
