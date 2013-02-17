@@ -94,7 +94,9 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+" Set solarized and fix for iTerm
 colorscheme solarized
+se t_Co=16
 
 " Always show the statusline
 set laststatus=2
