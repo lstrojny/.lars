@@ -1,4 +1,4 @@
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 
 export PATH=~/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -18,6 +18,7 @@ export LSCOLORS=exfxdxhxcxegedabagacad
 
 alias ll="ls -l"
 alias psed="perl -p -e"
+alias vi=vim
 
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWSTASHSTATE=1
