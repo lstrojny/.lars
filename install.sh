@@ -1,4 +1,6 @@
 #!/bin/sh
+git pull
+
 echo "Installing .bashrc"
 ln -sf $PWD/dot-bashrc ~/.bashrc
 
