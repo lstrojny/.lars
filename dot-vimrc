@@ -59,7 +59,7 @@ set foldmethod=manual
 set history=10000
 
 "Auto indenting
-set autoindent
+set autoindent smartindent
 
 "Let us use the mouse
 set mouse=a
@@ -96,4 +96,31 @@ augroup END
 
 colorscheme solarized
 
-set laststatus=2   " Always show the statusline
+" Always show the statusline
+set laststatus=2
+
+"Make command tab completion usable
+set wildmenu
+set wildmode=list:longest
+
+"Set terminal title
+set title
+
+" Remove short messages
+set shortmess=atI
+
+" Use visual bell
+set visualbell
+
+set backspace=indent,eol,start
+
+" cd to file dir automaticall
+set autochdir
+
+" Don’t redraw
+set lazyredraw
+
+set shell=bash
+
+" Enable spell checking
+autocmd BufNewFile,BufRead *.txt,*.md,*.html,*.php setlocal spell spelllang=en,de
