@@ -23,7 +23,7 @@ alias vi=vim
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWSTASHSTATE=0
     GIT_PS1_SHOWDIRTYSTATE=0
-    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUNTRACKEDFILES=0
     GIT_PS1_SHOWUPSTREAM=1
     GIT_PS1_DESCRIBE_STYLE=branch
     export PS1='$s \[\e[36;1m\]\u\[\e[37;1m\]@\[\e[32;1m\]\h\[\e[37;1m\] \[\e[0m\]\w\[\e[35;1m\]$(__git_ps1 " (%s)")\[\e[0m\] $ '
