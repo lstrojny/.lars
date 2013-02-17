@@ -21,8 +21,8 @@ alias psed="perl -p -e"
 alias vi=vim
 
 if `type __git_ps1 &>/dev/null`; then
-    GIT_PS1_SHOWSTASHSTATE=1
-    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=0
+    GIT_PS1_SHOWDIRTYSTATE=0
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM=1
     GIT_PS1_DESCRIBE_STYLE=branch
