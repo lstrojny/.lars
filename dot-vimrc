@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'vim-scala'
 Bundle 'Jinja'
+Bundle 'ocim/htmljinja.vim'
 Bundle 'wting/rust.vim'
 Bundle 'PIV'
 Bundle 'Solarized'
@@ -84,6 +85,9 @@ autocmd BufRead,BufNewFile *.phtml,*.json set textwidth=0
 autocmd BufRead,BufNewFile *.html,*.haml,*.rb,*.js,*.css,*.scss,*.groovy set ts=2 sw=2 sts=2 et
 
 autocmd BufNewFile,BufRead *.phpt setfiletype phpt
+
+" Twig
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |

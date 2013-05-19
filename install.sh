@@ -22,6 +22,9 @@ ln -sf $base/dot-gitconfig ~/.gitconfig
 echo "Installing .vimrc"
 ln -sf $base/dot-vimrc ~/.vimrc
 
+echo "Installing .lessfilter"
+ln -sf $base/dot-lessfilter ~/.lessfilter
+
 echo "Install vundle"
 [ -d ~/.vim/bundle/vundle ] && (cd ~/.vim/bundle/vundle && git pull) || git clone -q https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 

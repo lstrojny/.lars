@@ -1,9 +1,9 @@
 export EDITOR=vim
 
 export PATH=~/bin:$PATH
-export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
 
@@ -16,9 +16,13 @@ shopt -s histappend nocaseglob nocasematch cdspell
 export CLICOLOR=1
 export LSCOLORS=exfxdxhxcxegedabagacad
 
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+
 alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
+alias grep="grep --color"
 
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWUPSTREAM=1

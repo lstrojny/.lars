@@ -11,10 +11,10 @@
 	unpushed = log origin/master..HEAD
 	unp = log origin/master..HEAD
 	d = difftool
-	fuddle = !bash -c \"git stash && git pull && git push origin master && git stash pop\"
 	news = log -p HEAD@{1}..HEAD@{0}
 	gii = commit --interactive
 	p = push
+	tb = commit --allow-empty -m \"Trigger build\"
 [color]
     branch = auto
     diff = auto
@@ -25,3 +25,5 @@
 	excludesfile = /Users/lstrojny/.gitignore_global
 [push]
 	default = matching
+[pull]
+	rebase = true
