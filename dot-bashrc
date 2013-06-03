@@ -36,4 +36,4 @@ export PROMPT_COMMAND="[ \$? -gt 0 ] && s=☁  || s=☀ "
 GIT_MERGE_AUTOEDIT=no
 
 # Latest issue from GIT
-alias lai='git log -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"'
+alias lai='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"'
