@@ -22,7 +22,7 @@ export LESSOPEN='|~/.lessfilter %s'
 alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
-alias grep="grep --color"
+alias grep="grep --color=auto"
 
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWUPSTREAM=1
@@ -34,3 +34,6 @@ fi
 export PROMPT_COMMAND="[ \$? -gt 0 ] && s=☁  || s=☀ "
 
 GIT_MERGE_AUTOEDIT=no
+
+# Latest issue from GIT
+alias lai='git log -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"'

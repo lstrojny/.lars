@@ -15,6 +15,7 @@
 	gii = commit --interactive
 	p = push
 	tb = commit --allow-empty -m \"Trigger build\"
+	diffs = diff --cached
 [color]
     branch = auto
     diff = auto
