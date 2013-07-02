@@ -16,6 +16,8 @@
 	p = push
 	tb = commit --allow-empty -m \"Trigger build\"
 	diffs = diff --cached
+	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit
 [color]
     branch = auto
     diff = auto
@@ -24,7 +26,12 @@
 [core]
 	pager = less -r
 	excludesfile = /Users/lstrojny/.gitignore_global
+	compression = 9
 [push]
-	default = matching
+	default = current
 [pull]
 	rebase = true
+[repack]
+	usedeltabaseoffset = true
+[help]
+	autocorrect = 1

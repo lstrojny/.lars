@@ -36,7 +36,7 @@ set expandtab
 set nu!
 
 " Dark background
-set background=dark
+set background=light
 
 " A lot of different extensions are actually Zip files
 au BufReadCmd *.zargo,*.jar,*.xpi call zip#Browse(expand("<amatch>"))
