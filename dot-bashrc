@@ -4,7 +4,9 @@ export PATH=~/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=./vendor/bin:$PATH
+export PATH=./node_modules/.bin:$PATH
 export PATH=./bin:$PATH
 
 if which brew &> /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then

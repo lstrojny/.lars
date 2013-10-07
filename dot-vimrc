@@ -62,9 +62,6 @@ set history=10000
 "Auto indenting
 set autoindent smartindent
 
-"Let us use the mouse
-set mouse=a
-
 " Filetype specific issues
 " Drupal modules
 autocmd BufRead,BufNewFile *.module,*.install,*.resource setfiletype php|set syntax=php
