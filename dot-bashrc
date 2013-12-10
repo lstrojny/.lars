@@ -1,13 +1,19 @@
 export EDITOR=vim
 
-export PATH=~/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=./vendor/bin:$PATH
-export PATH=./node_modules/.bin:$PATH
-export PATH=./bin:$PATH
+PATH=~/bin:$PATH
+PATH=/usr/local/sbin:$PATH
+PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
+PATH=/usr/local/bin:$PATH
+PATH=/usr/local/opt/ruby/bin:$PATH
+PATH=./vendor/bin:$PATH
+PATH=../vendor/bin:$PATH
+PATH=./node_modules/.bin:$PATH
+PATH=./bin:$PATH
+PATH=/opt/chef/bin:$PATH
+PATH=/opt/chef/embedded/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH
 
 if which brew &> /dev/null && [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
@@ -39,4 +45,10 @@ GIT_MERGE_AUTOEDIT=no
 
 # Latest issue from GIT
 alias lai='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"'
-alias laic='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g" | tr "\n" ":" | pbcopy'
+alias laic='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g" | tr "\n" " " | pbcopy'
+
+alias pw='pwgen --secure --ambiguous -1 20'
+
+# PHP run-tests.php
+export NO_INTERACTION=1
+
