@@ -19,6 +19,9 @@ ln -sf $base/dot-caprc ~/.caprc
 echo "Installing .gitconfig"
 ln -sf $base/dot-gitconfig ~/.gitconfig
 
+echo "Installing .toprc"
+ln -sf $base/dot-toprc ~/.toprc
+
 echo "Installing .vimrc"
 ln -sf $base/dot-vimrc ~/.vimrc
 
