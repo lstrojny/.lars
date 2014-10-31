@@ -13,10 +13,10 @@ Bundle 'wting/rust.vim'
 Bundle 'PIV'
 Bundle 'Solarized'
 Bundle 'Textile-for-VIM'
-Bundle 'Markdown'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-json-bundle'
 Bundle 'jaytaph/phpt-vim-syntax-file'
+Bundle 'ksauzz/thrift.vim'
 
 " Enable syntax highlighting
 syntax on
