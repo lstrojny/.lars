@@ -30,6 +30,7 @@ alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
 alias grep="grep --color=auto"
+alias mvn7="JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/ mvn"
 
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWUPSTREAM=0
@@ -43,11 +44,21 @@ export PROMPT_COMMAND="[ \$? -gt 0 ] && s=☁  || s=☀ "
 GIT_MERGE_AUTOEDIT=no
 
 # Latest issue from GIT
-alias lai='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"'
-alias laic='git log --author strojny -1 | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g" | tr "\n" " " | pbcopy'
+function laic() {
+    lai $* | tr "\n" " " | pbcopy
+}
+
+function lai() {
+    let f=$(($1+1))
+    git log --no-merges --author strojny -$f | tail -n1 | sed -e "s:[^A-Z]*\([A-Z]*-[0-9]*\).*:\1:g"
+}
 
 alias pw='pwgen --secure --ambiguous -1 20'
 
 # PHP run-tests.php
 export NO_INTERACTION=1
 
+if [ -x `which git-achievements &>/dev/null`]; then
+    export PATH="$PATH:~/git/git-achievements"
+    alias git="~/bin/git-achievements"
+fi
