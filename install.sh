@@ -33,3 +33,9 @@ echo "Install vundle"
 
 echo "Run vundle install"
 vim +BundleInstall +qall
+
+echo "Install powerline"
+pip install --user git+git://github.com/Lokaltog/powerline
+
+echo "Install powerline fonts"
+([ -d ~/.vim/powerline-fonts ] && (cd ~/.vim/powerline-fonts && git pull) || git clone -q https://github.com/Lokaltog/powerline-fonts.git ~/.vim/powerline-fonts) && sh ~/.vim/powerline-fonts/install.sh

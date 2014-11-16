@@ -13,10 +13,10 @@ Bundle 'wting/rust.vim'
 Bundle 'PIV'
 Bundle 'Solarized'
 Bundle 'Textile-for-VIM'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-json-bundle'
 Bundle 'jaytaph/phpt-vim-syntax-file'
 Bundle 'ksauzz/thrift.vim'
+Bundle 'Lokaltog/powerline'
 
 " Enable syntax highlighting
 syntax on
@@ -127,3 +127,8 @@ set shell=bash
 
 " Enable spell checking
 autocmd BufNewFile,BufRead *.txt,*.md,*.html,*.php setlocal spell spelllang=en,de
+
+let g:Powerline_symbols = 'fancy'
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
