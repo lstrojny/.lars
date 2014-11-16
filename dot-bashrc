@@ -65,3 +65,9 @@ if `which git-achievements &>/dev/null`; then
     export PATH="$PATH:~/git/git-achievements"
     alias git="~/bin/git-achievements"
 fi
+
+POWERLINE_DIR=`pip show powerline-status | grep Location | cut -d : -f 2`
+if [ -f $POWERLINE_DIR/powerline/bindings/bash/powerline.sh ]; then
+    powerline-daemon -q
+    . $POWERLINE_DIR/powerline/bindings/bash/powerline.sh
+fi
