@@ -3,7 +3,7 @@ export LANG=en_US.UTF-8
 
 export EDITOR=vim
 
-PATH=~/bin:$PATH
+PATH=~/bin:~/.local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 PATH=/usr/local/bin:$PATH
@@ -66,8 +66,12 @@ if `which git-achievements &>/dev/null`; then
     alias git="~/bin/git-achievements"
 fi
 
-POWERLINE_DIR=`pip show powerline-status | grep Location | cut -d : -f 2`
-if [ -f $POWERLINE_DIR/powerline/bindings/bash/powerline.sh ]; then
-    powerline-daemon -q
-    . $POWERLINE_DIR/powerline/bindings/bash/powerline.sh
-fi
+POWERLINE_DIRS="`pip show powerline-status &>/dev/stdout | grep Location | cut -d : -f 2` $HOME/.local/lib/python2.7/site-packages"
+for POWERLINE_DIR in $POWERLINE_DIRS; do
+    echo $POWERLINE_DIR
+    if [ -f $POWERLINE_DIR/powerline/bindings/bash/powerline.sh ]; then
+        powerline-daemon -q
+        . $POWERLINE_DIR/powerline/bindings/bash/powerline.sh
+        break
+    fi
+done
