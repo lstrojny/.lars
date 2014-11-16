@@ -134,6 +134,9 @@ cnoreabbrev p set paste
 cnoreabbrev X x
 cnoreabbrev W w
 
+" Powerline
+set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h14
+
 if has("python")
     let g:Powerline_symbols = 'fancy'
     python from powerline.vim import setup as powerline_setup
