@@ -61,7 +61,7 @@ alias pw='pwgen --secure --ambiguous -1 20'
 # PHP run-tests.php
 export NO_INTERACTION=1
 
-if [ -x `which git-achievements &>/dev/null`]; then
+if `which git-achievements &>/dev/null`; then
     export PATH="$PATH:~/git/git-achievements"
     alias git="~/bin/git-achievements"
 fi
