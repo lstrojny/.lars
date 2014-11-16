@@ -127,6 +127,13 @@ set shell=bash
 " Enable spell checking
 autocmd BufNewFile,BufRead *.txt,*.md,*.html,*.php setlocal spell spelllang=en,de
 
+" Alias for "set paste"
+cnoreabbrev p set paste
+
+" Fix my favorite typos
+cnoreabbrev X x
+cnoreabbrev W w
+
 if has("python")
     let g:Powerline_symbols = 'fancy'
     python from powerline.vim import setup as powerline_setup
