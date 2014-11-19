@@ -16,6 +16,10 @@ Bundle 'vim-json-bundle'
 Bundle 'jaytaph/phpt-vim-syntax-file'
 Bundle 'ksauzz/thrift.vim'
 Bundle 'Lokaltog/powerline'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
 
 " Enable syntax highlighting
 syntax on
@@ -133,6 +137,7 @@ cnoreabbrev p set paste
 " Fix my favorite typos
 cnoreabbrev X x
 cnoreabbrev W w
+cnoreabbrev Q q
 
 " Powerline
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h14

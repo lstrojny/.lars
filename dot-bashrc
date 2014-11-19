@@ -29,6 +29,7 @@ export LSCOLORS=exfxdxhxcxegedabagacad
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
+alias g=git
 alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
