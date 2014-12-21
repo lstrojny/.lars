@@ -44,4 +44,5 @@ echo "Install powerline fonts"
 ([ -d ~/.vim/powerline-fonts ] && (cd ~/.vim/powerline-fonts && git pull) || git clone -q https://github.com/Lokaltog/powerline-fonts.git ~/.vim/powerline-fonts) && bash ~/.vim/powerline-fonts/install.sh
 
 echo "Install powerline config"
+mkdir -p ~/.config
 ln -sf $base/dot-config-powerline ~/.config/powerline

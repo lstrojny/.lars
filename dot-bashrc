@@ -8,6 +8,7 @@ PATH=/usr/local/sbin:$PATH
 PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/opt/ruby/bin:$PATH
+PATH=~/Library/Python/2.7/bin/:$PATH
 PATH=./vendor/bin:$PATH
 PATH=./node_modules/.bin:$PATH
 PATH=$PATH:~/.rvm/bin
