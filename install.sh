@@ -19,6 +19,9 @@ ln -sf $base/dot-caprc ~/.caprc
 echo "Installing .gitconfig"
 ln -sf $base/dot-gitconfig ~/.gitconfig
 
+echo "Installing .gitignore_global"
+ln -sf $base/dot-gitignore_global ~/.gitignore_global
+
 echo "Installing .toprc"
 ln -sf $base/dot-toprc ~/.toprc
 

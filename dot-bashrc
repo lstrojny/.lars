@@ -31,7 +31,7 @@ alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
 alias grep="grep --color=auto"
-alias mvn7="JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/ mvn"
+alias mvn7="JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/ mvn"
 
 if `type __git_ps1 &>/dev/null`; then
     GIT_PS1_SHOWUPSTREAM=0
@@ -72,3 +72,7 @@ for POWERLINE_DIR in $POWERLINE_DIRS; do
         break
     fi
 done
+
+if [ -f ~/.homebrew-token ]; then
+    export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.homebrew-token`
+fi

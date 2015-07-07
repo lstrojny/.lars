@@ -19,7 +19,7 @@
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
 	addpatch = add -p
-	addi = add -p
+	pp = !git pull && git push || git pp
 [color]
     branch = auto
     diff = auto

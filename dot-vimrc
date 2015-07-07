@@ -20,6 +20,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
+Bundle 'hhvm/vim-hack'
 
 " Enable syntax highlighting
 syntax on
@@ -138,6 +139,9 @@ cnoreabbrev p set paste
 cnoreabbrev X x
 cnoreabbrev W w
 cnoreabbrev Q q
+
+" Use system clipboard
+set clipboard=unnamed
 
 " Powerline
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h14
