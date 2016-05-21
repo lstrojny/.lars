@@ -45,7 +45,7 @@ echo "Install vundle"
 [ -d ~/.vim/bundle/vundle ] && (cd ~/.vim/bundle/vundle && git pull) || git clone -q https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Run vundle install"
-vim +BundleInstall +qall
+vim +BundleInstall +qall 2&> /dev/null
 
 echo "Install powerline"
 pip install --quiet --user git+git://github.com/Lokaltog/powerline

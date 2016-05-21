@@ -83,7 +83,7 @@ autocmd BufRead,BufNewFile *.c,*.cc,*.h,*.y,*.phpt set noexpandtab
 autocmd BufRead,BufNewFile *.phtml,*.json set textwidth=0
 
 " Two spaces for .html, .haml, .rb, .js and .css
-autocmd BufRead,BufNewFile *.html,*.haml,*.rb,*.js,*.css,*.scss,*.groovy set ts=2 sw=2 sts=2 et
+autocmd BufRead,BufNewFile *.html,*.haml,*.rb,*.js,*.css,*.scss,*.groovy,*.yml set ts=2 sw=2 sts=2 et
 
 autocmd BufNewFile,BufRead *.phpt setfiletype phpt
 
