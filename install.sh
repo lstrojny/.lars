@@ -39,7 +39,8 @@ ln -sf $base/dot-screenrc ~/.screenrc
 
 echo "Install powerline config"
 mkdir -p ~/.config
-unlink ~/.config/powerline && ln -sf $base/dot-config-powerline ~/.config/powerline
+unlink ~/.config/powerline
+ln -sf $base/dot-config-powerline ~/.config/powerline
 
 echo "Install vundle"
 [ -d ~/.vim/bundle/vundle ] && (cd ~/.vim/bundle/vundle && git pull) || git clone -q https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
