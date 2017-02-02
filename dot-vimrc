@@ -21,6 +21,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'hhvm/vim-hack'
+Bundle 'pearofducks/ansible-vim'
 
 " Enable syntax highlighting
 syntax on
@@ -43,7 +44,7 @@ set nu!
 set background=dark
 
 " A lot of different extensions are actually Zip files
-au BufReadCmd *.zargo,*.jar,*.xpi call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.zargo,*.jar,*.xpi,*.pkpass call zip#Browse(expand("<amatch>"))
 
 " Mark line length violation
 set textwidth=120
@@ -86,6 +87,14 @@ autocmd BufRead,BufNewFile *.phtml,*.json set textwidth=0
 autocmd BufRead,BufNewFile *.html,*.haml,*.rb,*.js,*.css,*.scss,*.groovy,*.yml set ts=2 sw=2 sts=2 et
 
 autocmd BufNewFile,BufRead *.phpt setfiletype phpt
+
+" Ansible
+autocmd BufRead,BufNewFile */play*/*.yml set filetype=ansible
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+let g:ansible_attribute_highlight = "d"
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_keywords_highlight = 1
+
 
 " Twig
 au BufRead,BufNewFile *.twig set filetype=htmljinja

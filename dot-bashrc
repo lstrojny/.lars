@@ -8,7 +8,7 @@ PATH=/usr/local/sbin:$PATH
 PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/opt/ruby/bin:$PATH
-PATH=~/Library/Python/2.7/bin/:$PATH
+PATH=~/Library/Python/2.7/bin:$PATH
 PATH=./vendor/bin:$PATH
 PATH=./node_modules/.bin:$PATH
 PATH=$PATH:~/.rvm/bin
@@ -26,7 +26,14 @@ export LSCOLORS=exfxdxhxcxegedabagacad
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
+function alias_completion() {
+    local cmd=(`complete -p $1`)
+    unset cmd[${#cmd[@]}-1]
+    echo ${cmd[*]} $2
+}
+
 alias g=git
+`alias_completion git g`
 alias ll="ls -l"
 alias psed="perl -p -e"
 alias vi=vim
@@ -76,3 +83,26 @@ done
 if [ -f ~/.homebrew-token ]; then
     export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.homebrew-token`
 fi
+
+export PATH="/Users/lstrojny/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+function ansible_home() {
+    export ANSIBLE_INVENTORY=/Users/lstrojny/Projects/home/ansible_hosts
+}
+
+# http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+function man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+
+source ~/Projects/ansible/hacking/env-setup -q
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"

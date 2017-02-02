@@ -20,6 +20,10 @@
 	ll = log --stat --abbrev-commit
 	addpatch = add -p
 	pp = !git pull && git push || git pp
+	g = grep
+	s = stash
+	cm = !git commit -m
+	aa = add -A
 [color]
     branch = auto
     diff = auto
@@ -30,12 +34,23 @@
 	excludesfile = /Users/lstrojny/.gitignore_global
 	compression = 9
 [push]
-	default = current
+	default = simple
 [pull]
 	rebase = true
+	ff = only
 [repack]
 	usedeltabaseoffset = true
 [help]
 	autocorrect = 1
 [merge]
 	renamelimit = 10000
+	tool = kdiff3
+[mergetool]
+	tool = kdiff3
+	keepBackup = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[fetch]
+	prune = true
