@@ -85,7 +85,6 @@ if [ -f ~/.homebrew-token ]; then
 fi
 
 export PATH="/Users/lstrojny/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
 
 function ansible_home() {
     export ANSIBLE_INVENTORY=/Users/lstrojny/Projects/home/ansible_hosts
@@ -105,4 +104,4 @@ function man() {
 }
 
 source ~/Projects/ansible/hacking/env-setup -q
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+#eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"

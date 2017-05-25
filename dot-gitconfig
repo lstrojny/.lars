@@ -34,6 +34,7 @@
 	pager = less -r
 	excludesfile = /Users/lstrojny/.gitignore_global
 	compression = 9
+	ignorecase = true
 [push]
 	default = simple
 [pull]
@@ -55,3 +56,8 @@
 	required = true
 [fetch]
 	prune = true
+    fsckObjects = true
+[includeIf "gitdir:~/Projects/InterNations/"]
+    path = .gitconfig-internations
+[includeIf "gitdir:~/Projects/github.com/InterNations/"]
+    path = .gitconfig-internations
