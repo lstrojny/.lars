@@ -38,7 +38,7 @@
 [push]
 	default = simple
 [pull]
-	rebase = true
+	rebase = preserve
 	ff = only
 [repack]
 	usedeltabaseoffset = true
